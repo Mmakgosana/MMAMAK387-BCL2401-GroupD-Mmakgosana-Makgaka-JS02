@@ -13,9 +13,12 @@ const displayWorkoutRoutine = () => {
 };
 
 document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine);
-
+// Function to add a new goal to the list
 const addNewGoal = () => {
+    // Get the value of the input field where the goal is entered
     const goalInput = document.querySelector('#goalInput').value;
+
+    // Get the reference to the list where goals will be displayed
     const goalList = document.querySelector('#goalList');
 
     // Retrieve all existing goals
@@ -34,34 +37,16 @@ const addNewGoal = () => {
 
 
     // If no duplicate is found, proceed to add the new goal
+
+    //Create a new list item element to represent the new goal
 const newGoal = document.createElement('li');
+    // This is to set the text content of the new list item to the entered goal
 newGoal.textContent = goalInput;
+// This is to append the new list item to the goal list
 goalList.appendChild(newGoal);
 };
 
 
-
-// ⚠️⚠️⚠️ Lesson 3: Creating and Removing Elements ⚠️⚠️⚠️
-// Function to add new fitness goals and remove completed ones
-// NOW LET'S DEBUG TO PREVENT DUPLICATE GOALS FROM BEING SUBMITTED 🚀
-
-    // ⚠️ Hint 1: Check for duplicates
-    // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
-    //Check for duplicates
-
-    
-    // ⚠️ Hint 2: Prevent duplicates
-    // If a duplicate is found, display an alert to the user and don't add the goal to the list.
-    // If it's not a duplicate, proceed with adding it as a new goal.
-    
-    // ⚠️ Hint 3: Code structure
-    // You might want to wrap the duplicate-checking logic in an 'if' statement.
-    
-    // ⚠️ Hint 4: Event listener
-    // The event listener that removes goals when clicked is not related to this issue.
-    // Focus on preventing duplicates for now.
-    
-    
 
 // Add event listener to the goal submit button
 document.querySelector('#submitGoal').addEventListener('click', addNewGoal);
